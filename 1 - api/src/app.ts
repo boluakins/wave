@@ -8,6 +8,7 @@ const app = express();
 
 app.use(middleware);
 app.use("/api", routes);
+app.use(ErrorHandler)
 
 app.listen(port, () => {
   console.log(`server listening on ${port}...`);

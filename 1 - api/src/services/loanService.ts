@@ -2,14 +2,14 @@ import axios from "axios";
 import { liveRateUrl } from ".././config";
 import ApiResponse from "../models/ApiResponse";
 import { round } from "lodash";
+import Logger from "../core/Logger";
 
 const getRates = async (): Promise<any> => {
   try {
     const response = await axios.get(liveRateUrl);
     return response.data;
   } catch (error) {
-    console.log(error);
-    
+    Logger.error(error);
     return {};
   }
 };
